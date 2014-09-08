@@ -23,11 +23,15 @@
           });
 
           $messageInput.off("keypress").on("keypress", function(e) {
-            if (e.keyCode == 13) {
-              chan.send("new:message", {username: $usernameInput.val(),
-                                        content: $messageInput.val()});
-              $messageInput.val("");
-            }
+              if (e.keyCode == 13) {
+                  var payload = {
+                      username: $usernameInput.val(),
+                      content:  $messageInput.val(),
+                  }
+
+                  chan.send("new:message", payload);
+                  $messageInput.val("");
+              }
           });
       });
   });
