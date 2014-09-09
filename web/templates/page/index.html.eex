@@ -4,7 +4,9 @@
 <br>
 <input type="text" id="message-input" placeholder="Message...">
 
-<div id="messages" class="container"></div>
+<div class="container">
+  <ul id="messages"></ul>
+</div>
 
 <script type='text/javascript'>
   $(function() {
@@ -15,24 +17,28 @@
 
       socket.join("rooms", "lobby", {}, function(chan) {
           chan.on("user:entered", function(message) {
-              $messages.append("<br>[" + message.username + "] entered")
+              $messages.append("<li>[" + message.username + "] entered</li>")
           });
 
           chan.on("new:message", function(msg) {
-              $messages.append("<br/>[" + msg.username + "] " + msg.content)
+              $messages.append("<li>[" + msg.username + "] " + msg.content + "</li>")
           });
 
           $messageInput.off("keypress").on("keypress", function(e) {
               if (e.keyCode == 13) {
-                  var payload = {
-                      username: $usernameInput.val(),
-                      content:  $messageInput.val(),
-                  }
-
-                  chan.send("new:message", payload);
-                  $messageInput.val("");
+                  sendMessage();
               }
           });
+
+          window.sendMessage = function() {
+              var payload = {
+                  username: $usernameInput.val(),
+                  content:  $messageInput.val(),
+              }
+
+              chan.send("new:message", payload);
+              $messageInput.val("");
+          }
       });
   });
 </script>
