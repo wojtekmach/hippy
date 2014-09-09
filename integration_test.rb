@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require 'net/http'
 require 'capybara'
-require 'capybara-webkit'
 
 class Server
   attr_reader :port
