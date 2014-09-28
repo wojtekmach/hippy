@@ -1,0 +1,10 @@
+<ul>
+  {{#each message in messages}}
+    <li>{{message.text}}</li>
+  {{/each}}
+</ul>
+
+<form class="new-message" {{action "submit" on="submit"}}>
+  {{input type="text" placeholder="Text..." value=message autofocus=true}}
+  {{input type="submit" value="Send"}}
+</form>
