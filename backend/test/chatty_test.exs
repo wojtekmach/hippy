@@ -1,4 +1,4 @@
-defmodule ChattyTest do
+defmodule HippyTest do
   use ExUnit.Case
 
   test "the truth" do

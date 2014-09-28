@@ -1,4 +1,4 @@
-defmodule Chatty.Views do
+defmodule Hippy.Views do
 
   defmacro __using__(_options) do
     quote do
@@ -6,8 +6,8 @@ defmodule Chatty.Views do
       import unquote(__MODULE__)
 
       # This block is expanded within all views for aliases, imports, etc
-      import Chatty.I18n
-      import Chatty.Router.Helpers
+      import Hippy.I18n
+      import Hippy.Router.Helpers
     end
   end
 

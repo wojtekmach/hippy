@@ -1,4 +1,4 @@
-defmodule Chatty.PageView do
-  use Chatty.Views
+defmodule Hippy.PageView do
+  use Hippy.Views
 
 end

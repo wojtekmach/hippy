@@ -1,9 +1,9 @@
-defmodule Chatty.Router do
+defmodule Hippy.Router do
   use Phoenix.Router
   use Phoenix.Router.Socket, mount: '/ws'
 
-  get "/", Chatty.PageController, :index, as: :pages
+  get "/", Hippy.PageController, :index, as: :pages
 
-  channel "rooms", Chatty.Channels.Rooms
+  channel "rooms", Hippy.Channels.Rooms
 
 end

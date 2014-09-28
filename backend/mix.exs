@@ -1,8 +1,8 @@
-defmodule Chatty.Mixfile do
+defmodule Hippy.Mixfile do
   use Mix.Project
 
   def project do
-    [ app: :chatty,
+    [ app: :hippy,
       version: "0.0.1",
       elixir: "~> 1.0.0-rc1",
       elixirc_paths: ["lib", "web"],
@@ -12,7 +12,7 @@ defmodule Chatty.Mixfile do
   # Configuration for the OTP application
   def application do
     [
-      mod: { Chatty, [] },
+      mod: { Hippy, [] },
       applications: [:phoenix, :cowboy, :logger]
     ]
   end

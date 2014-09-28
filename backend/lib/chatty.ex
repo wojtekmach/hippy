@@ -1,4 +1,4 @@
-defmodule Chatty do
+defmodule Hippy do
   use Application
 
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
@@ -11,7 +11,7 @@ defmodule Chatty do
       # worker(TestApp.Worker, [arg1, arg2, arg3])
     ]
 
-    opts = [strategy: :one_for_one, name: Chatty.Supervisor]
+    opts = [strategy: :one_for_one, name: Hippy.Supervisor]
     Supervisor.start_link(children, opts)
   end
 end

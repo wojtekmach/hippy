@@ -1,4 +1,4 @@
-defmodule Chatty.PageController do
+defmodule Hippy.PageController do
   use Phoenix.Controller
 
   def index(conn, _params) do

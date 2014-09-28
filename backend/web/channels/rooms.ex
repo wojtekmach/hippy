@@ -1,4 +1,4 @@
-defmodule Chatty.Channels.Rooms do
+defmodule Hippy.Channels.Rooms do
   use Phoenix.Channel
 
   def join(socket, topic = "lobby", message) do

@@ -52,7 +52,7 @@ Capybara.register_driver :chrome do |app|
    Capybara::Selenium::Driver.new(app, browser: :chrome)
 end
 
-class Chatty
+class Hippy
   Capybara.current_driver = :chrome
   include Capybara::DSL
 
@@ -74,7 +74,7 @@ class Chatty
 end
 
 
-system "rm -rf _build/dev/lib/chatty/"
+system "rm -rf _build/dev/lib/hippy/"
 $server = Server.new
 $server.start
 
@@ -82,13 +82,13 @@ Minitest.after_run {
   $server.stop
 }
 
-describe 'Chatty' do
+describe 'Hippy' do
   it do
-    chatty = Chatty.new($server.uri)
-    chatty.username = 'wojtek'
+    hippy = Hippy.new($server.uri)
+    hippy.username = 'wojtek'
 
-    chatty.say "hello!"
-    assert chatty.page.has_content?("[wojtek] hello!"), message { "Expected something, got: " + chatty.messages.inspect }
+    hippy.say "hello!"
+    assert hippy.page.has_content?("[wojtek] hello!"), message { "Expected something, got: " + hippy.messages.inspect }
   end
 end
 
